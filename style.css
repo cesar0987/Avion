@@ -25,8 +25,8 @@
 
 }
 #players{
-    left:360px;
-    top: 570px;
+    left:120px;
+    top: 350px;
     position: absolute;
 }
 #score{
@@ -64,11 +64,14 @@
     display: none;
 }
 .player1{
-    position: relative;
+    position: absolute;
+    left: 360px;
+    top: 570px;
+    width: 100px; /* Adjust the width of the player element */
+    height: 100px; /* Adjust the height of the player element */
+    background-color: transparent; /* Set the background color to transparent */
     background-repeat: no-repeat;
     background-image: url('/img/player1.png');
-    width: 100px;
-    height: 100px;
     background-size: contain;
     transform: rotate(180deg);
 }

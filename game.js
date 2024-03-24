@@ -7,8 +7,8 @@ const playerPrint = document.getElementById("players");
     var boundaries = {
         top: 0,
         left: 0,
-        bottom: 500,
-        right: 500
+        bottom: 150,
+        right: 330
     };
 
     var enemies = [
@@ -41,19 +41,31 @@ const playerPrint = document.getElementById("players");
     drawEnemies();
     drawPlayer();
     setInterval(changeRandomImageOceans, 5000)
-    document.onkeydown = function(e) {
-    if (e.keyCode === 37) {
-        player.left -= 10;
+   document.onkeydown = function(e) {
+    var step = 10; // Define the step size for player movement
+
+    // Update player's position based on the key pressed
+    if (e.keyCode === 37) { // Left arrow key
+        if (player.left - step >= boundaries.left) { // Check if moving left stays within boundaries
+            player.left -= step;
+        }
     }
-    if (e.keyCode === 39) {
-        player.left += 10;
+    if (e.keyCode === 39) { // Right arrow key
+        if (player.left + step <= boundaries.right) { // Check if moving right stays within boundaries
+            player.left += step;
+        }
     }
-    if (e.keyCode === 38) {
-        player.top -= 10;
+    if (e.keyCode === 38) { // Up arrow key
+        if (player.top - step >= boundaries.top) { // Check if moving up stays within boundaries
+            player.top -= step;
+        }
     }
-    if (e.keyCode === 40) {
-        player.top += 10;
+    if (e.keyCode === 40) { // Down arrow key
+        if (player.top + step <= boundaries.bottom) { // Check if moving down stays within boundaries
+            player.top += step;
+        }
     }
-    drawPlayer();
+    drawPlayer(); // Redraw the player with updated position
 }
+
 
