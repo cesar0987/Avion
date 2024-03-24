@@ -1,8 +1,9 @@
 #ocean{
-    background-image: url('/img/ocean.jpeg');
+    background-image: url('/img/ocean1.jpeg');
     background-size: contain;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-blend-mode: lighten;
     background-position: center;
     height: 90vh;
     width: 100%;
@@ -12,15 +13,60 @@
     flex-direction: column;
     font-size: 2em;
 }
+
+#enemies{
+    flex: auto;
+    display: flex;
+    justify-content: center;   
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
 #players{
     left:360px;
     top: 570px;
     position: absolute;
 }
+#score{
+    position: absolute;
+    top: 50px;
+    left: 320px;
+    font-size: 50px;
+    color: white;
+    background-color: black;
+}
+#life{
+    position: absolute;
+    top: 50px;
+    right:350px;
+    font-size: 50px;
+    color: white;
+    background-color: black;
+}
+#game-over{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 3em;
+    color: white;
+    background-color: black;
+    display: none;
+}
+#start{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 3em;
+    color: white;
+    background-color: black;
+    display: none;
+}
 .player1{
     position: relative;
     background-repeat: no-repeat;
-    background-image: url('/img/player.png');
+    background-image: url('/img/player1.png');
     width: 100px;
     height: 100px;
     background-size: contain;
@@ -38,7 +84,7 @@
 .bullet{
     position: absolute;
     background-repeat: no-repeat;
-    background-image: url('/img/bomb.png');
+    background-image: url('/img/bomb1.png');
     width: 50px;
     height: 50px;
     background-size: contain;
