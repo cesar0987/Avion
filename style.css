@@ -1,70 +1,103 @@
-#ocean{
-    background-image: url('/img/ocean1.jpeg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-blend-mode: lighten;
-    background-position: center;
-    height: 90vh;
-    width: 100%;
+/* Game Board */
+.game-board {
+    /* border: 5px black solid; */
+    display: block;
+  }
+  
+  .score {
+    position: absolute;
+    top: 50px;
+    left: 250px;
+    font-size: 50px;
+    color: white;
+    background-color: black;
+  }
+  .life {
+    position: absolute;
+    top: 50px;
+    right: 280px;
+    font-size: 50px;
+    color: white;
+    background-color: black;
+  }
+  .game-over {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 3em;
+    color: white;
+    background-color: black;
+    display: none;
+  }
+  .start {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 3em;
+    color: white;
+    background-color: black;
+    display: none;
+  }
+  
+  /* OCEAN GAME */
+  
+  .ocean {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+  }
+  
+  .ocean-container {
+    background-image: url('/img/ocean1.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-blend-mode: lighten;
+    background-position: center;
+  
+    height: 90vh;
+    width: 100%;
+    max-width: 550px;
+    position: relative;
+  
     font-size: 2em;
-}
-
-#enemies{
-    flex: auto;
+  }
+  
+  .war-enemies {
+    /* flex: auto;  este nose que hace */
     display: flex;
-    justify-content: center;   
-    top: 0;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    /* top: 0;
     left: 0;
     width: 100%;
+    height: 100%; */
+  }
+  .war-in-game-players {
+    /* left: 120px;
+    top: 350px; */
+  
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .war-ammon-bullets {
+    position: absolute;
+    object-position: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
     height: 100%;
-
-}
-#players{
-    left:120px;
-    top: 350px;
-    position: absolute;
-}
-#score{
-    position: absolute;
-    top: 50px;
-    left: 320px;
-    font-size: 50px;
-    color: white;
-    background-color: black;
-}
-#life{
-    position: absolute;
-    top: 50px;
-    right:350px;
-    font-size: 50px;
-    color: white;
-    background-color: black;
-}
-#game-over{
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 3em;
-    color: white;
-    background-color: black;
-    display: none;
-}
-#start{
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 3em;
-    color: white;
-    background-color: black;
-    display: none;
-}
-.player1{
-    position: absolute;
+  }
+  
+  .player1 {
+    position: relative;
     left: 360px;
     top: 570px;
     width: 100px; /* Adjust the width of the player element */
@@ -73,22 +106,21 @@
     background-repeat: no-repeat;
     background-image: url('/img/player1.png');
     background-size: contain;
-    transform: rotate(180deg);
-}
-.enemy1{
+  }
+  .enemy1 {
     position: relative;
     background-repeat: no-repeat;
-    background-image: url('/img/enemy.png');
+    background-image: url('/img/enemy1.png');
     width: 80px;
     height: 80px;
     background-size: contain;
-    transform: rotate(180deg);
-}
-.bullet{
-    position: absolute;
+  }
+  .bullet {
+    position: relative;
     background-repeat: no-repeat;
     background-image: url('/img/bomb1.png');
     width: 50px;
     height: 50px;
     background-size: contain;
-}
+  }
+  
